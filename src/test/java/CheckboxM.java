@@ -1,5 +1,6 @@
 import Enums.Options;
 import Utils.WebUtils;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -20,12 +21,14 @@ public class CheckboxM implements interfaces.Checkbox {
     @Override
     public void on() {
         if (!isChecked()) $x(checkboxIconXpath).click();
+        $x("//mvid-plp-product-cards-layout").shouldBe(Condition.visible);
         Assertions.assertTrue(isChecked());
     }
 
     @Override
     public void off() {
         if (isChecked()) $x(checkboxIconXpath).click();
+        $x("//mvid-plp-product-cards-layout").shouldBe(Condition.visible);
         Assertions.assertFalse(isChecked());
     }
 

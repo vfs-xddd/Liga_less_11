@@ -23,6 +23,7 @@ public class SwitcherM implements Checkbox {
         SelenideElement el = $x(controlXpath);
         el.scrollIntoView(false).shouldBe(visible);
         if (!isChecked()) el.click();
+        $x("//mvid-plp-product-cards-layout").shouldBe(Condition.visible);
 
         el.shouldNotHave(Condition.pseudo(":before", "transform", "none"));
 
@@ -34,6 +35,7 @@ public class SwitcherM implements Checkbox {
         SelenideElement el = $x(controlXpath);
         el.scrollIntoView(false).shouldBe(visible);
         if (isChecked()) el.click();
+        $x("//mvid-plp-product-cards-layout").shouldBe(Condition.visible);
 
         el.shouldHave(Condition.pseudo(":before", "transform", "none"));
 

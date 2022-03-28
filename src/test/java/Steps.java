@@ -14,6 +14,7 @@ public class Steps {
         List<Category> categories = SearchingPage.filter().getCategories();
         List<Checkbox> checkboxes = categories.get(0).getCheckboxList();
         checkboxes.get(0).on();
+
     }
 
     @Step
